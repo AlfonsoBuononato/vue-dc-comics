@@ -35,8 +35,13 @@ export default {
   }
 
   #app{
-    max-width: 1200px;
-    margin: auto;
+    max-width: 100%;
+  }
+
+  header,
+  main,
+  footer{
+    max-width: 100%;
   }
 
   li{
