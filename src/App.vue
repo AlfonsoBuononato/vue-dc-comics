@@ -8,18 +8,20 @@
     <Main/>
 
     <!-- FOOTER -->
-    <footer>qui footer</footer>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header.vue"
 import Main from "@/components/Main.vue"
+import Footer from "@/components/Footer.vue"
 export default {
   name: 'App',
   components: {
     Header,
     Main,
+    Footer
   }
 }
 </script>
@@ -35,5 +37,13 @@ export default {
   #app{
     max-width: 1200px;
     margin: auto;
+  }
+
+  li{
+    list-style: none;
+  }
+
+  a{
+    text-decoration: none;
   }
 </style>
