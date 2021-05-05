@@ -27,28 +27,7 @@ export default {
 </script>
 
 <style lang="scss">
-  /* UTILITIES GENERAL */
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
 
-  #app{
-    max-width: 100%;
-  }
+@import "./style/general.scss"
 
-  header,
-  main,
-  footer{
-    max-width: 100%;
-  }
-
-  li{
-    list-style: none;
-  }
-
-  a{
-    text-decoration: none;
-  }
 </style>

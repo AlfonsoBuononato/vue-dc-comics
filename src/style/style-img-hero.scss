@@ -1,0 +1,16 @@
+/* STYLE IMMAGINI NELL HERO */
+.fumetti{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.fumetti{
+    .img{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 200px;
+        
+    }
+}

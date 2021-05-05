@@ -3,15 +3,16 @@
         <div class="container-top-footer">
             <!-- CONTATTI -->
             <div class="contatti">
-                <div class="info-1">
-                    <div class="dc-comics">
-                        <ul class="list-dc-comics" v-for="(title, index) in data" :key="index">
-                            <h3>{{title.sottotitolo}}</h3>
-                            <li><a href="#">{{title.info}}</a></li>
+                <div class="info">
+                    <div class="dc-comics" v-for="(title, index) in data" :key="index">
+                        <h3>{{title.sottotitolo}}</h3>
+                        <ul class="list-dc-comics">
+                            <li v-for="(info, index) in title.infos" :key="index"><a href="#">{{info}}</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
+            <img src="../assets/dc-logo-bg.png" alt="">
         </div>
         <div class="container-bottom">
             <!-- SOCIAL -->
@@ -24,7 +25,7 @@
                 <div class="follow-uf">
                     <ul class="social">
                         <h5>FOLLOW US</h5>
-                        <li><i class="fab fa-facebook"></i></li>
+                        <li v-for="(icon, index) in social" :key="index"><a href="#"><i :class="icon"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -40,27 +41,28 @@ export default {
             data:[
                 {
                     sottotitolo: "DC COMICS",
-                    info: ["Characters", "Comics", "Movies", "TV", "Games", "Videos", "News"]
+                    infos: ["Characters", "Comics", "Movies", "TV", "Games", "Videos", "News"]
                 },
                 {
                     sottotitolo: "SHOP",
-                    info: ["Shop DC", "Shop DC Collectibles",]
+                    infos: ["Shop DC", "Shop DC Collectibles",]
                 },
                 {
                     sottotitolo: "DC COMICS",
-                    info: ["Terms Of Use", "Privacy policy (New)", "Ad Choices", "Advertising", "Jobs", "Subscriptions", "Talent Workshops", "CPSC Certificates", "Ratings", "Shop Help"]
+                    infos: ["Terms Of Use", "Privacy policy (New)", "Ad Choices", "Advertising", "Jobs", "Subscriptions", "Talent Workshops", "CPSC Certificates", "Ratings", "Shop Help"]
                 },
                 {
                     sottotitolo: "DC COMICS",
-                    info: ["Characters", "Comics", "Movies", "TV", "Games", "Videos", "News" ]
+                    infos: ["Characters", "Comics", "Movies", "TV", "Games", "Videos", "News"]
                 }
-            ]
+            ],
+            social:["fab fa-facebook", "fab fa-twitter", "fab fa-youtube","fab fa-pinterest", "fas fa-map-marker-alt"]
         }
     }
 }
 </script>
 
-<style>
+<style lang="scss">
     footer{
         height: 300px;
     }
@@ -73,17 +75,40 @@ export default {
     }
     /* CONTATTI */
     .container-top-footer{
+        position: relative;
         background-image: url(../assets/footer-bg.jpg);
     }
     footer .contatti{
-        display: flex;
         max-width: 1200px;
         margin: auto;
     }
 
+    .info{
+        display: flex;
+        padding: 30px 0;
+    }
+
+    .info .dc-comics{
+        padding: 0 10px;
+    }
+
+    .info h3{
+        margin-bottom: 10px;
+    }
+
+    .container-top-footer img{
+        width: 400px;
+        position: absolute;
+        top: 0;
+        right: 15%;
+        transform: translate(0,-5%);
+    }
+
     /* SOCIAL */
     .container-bottom{
+        position: relative;
         background-color: #2f2f2f;
+        z-index: 3;
     }
     footer .social{
         display: flex;
@@ -98,5 +123,14 @@ export default {
         padding: 5px;
         border: 1px solid #166fca;
         color: #fff;
+    }
+
+    footer{
+        ul{
+            a{
+                font-size: 20px;
+                padding: 5px;
+            }
+        }
     }
 </style>
