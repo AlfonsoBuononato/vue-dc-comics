@@ -97,7 +97,7 @@ export default {
     }
 
     .container-top-footer img{
-        width: 400px;
+        width: 370px;
         position: absolute;
         top: 0;
         right: 15%;

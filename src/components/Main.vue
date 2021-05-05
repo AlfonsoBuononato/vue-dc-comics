@@ -3,14 +3,14 @@
         <div class="container-top">
             <!-- CONTENT TOP -->
             <!-- JUMBOTRON -->
-                <div class="jumbotron">
-                    <img src="../assets/jumbotron.jpg" alt="" style="width: 100%; height: 100%">
-                </div>
+            <div class="jumbotron">
+                <!-- JUMBOTRON -->
+            </div>
             <!-- SEZIONE FUMETTI GESTITI JAVASCRIPT -->
             <div class="content-top">
                 <div class="super-hero">
                     <!-- MINI TITLE POSITION ABSOLUTE -->
-                    <div class="mini-titile">
+                    <div class="sottotitolo">
                         <span>current series</span>
                     </div>
                     <!-- FUMETTI JAVASCRIPT -->
@@ -179,6 +179,9 @@ export default {
     }
     .content .content-bottom ul{
         display: flex;
+        justify-content: space-between;
+        width: 90%;
+        margin: auto;
     }
     .content .content-bottom li{
         display: flex;
