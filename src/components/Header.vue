@@ -7,11 +7,10 @@
             </div>
             <!-- HEADER RIGHT LOGO -->
             <div class="right">
-                <ul class="list-item" 
-                    >
+                <ul class="list-item">
                     <li v-for="(link, index) in links" 
-                        :key="index">
-                        <a href="#">{{link}}</a>
+                        :key="index" @click="ciao()">
+                        <a href="#">{{link.nav}}</a>
                     </li>
                 </ul>
             </div>
@@ -24,7 +23,15 @@ export default {
     name: "Header",
     data(){
         return{
-            links:["CHARACTERS", "COMICS", "MOVIES", "TV", "GAMES", "COLLECTIBLES", "VIDEOS", "FANS", "NEWS", "SHOP"] 
+            links:{
+                nav:["CHARACTERS", "COMICS", "MOVIES", "TV", "GAMES", "COLLECTIBLES", "VIDEOS", "FANS", "NEWS", "SHOP"], 
+                color: "black",
+            }
+        }
+    },
+    methods:{
+        ciao(){
+            console.log(this.links.nav[1]);
         }
     }
 }
@@ -68,6 +75,11 @@ export default {
 
     .list-item a{
         color: #000;
+    }
+
+    .active{
+        color: #0d76e0;
+        border-color: #0d76e0;
     }
 
 </style>
