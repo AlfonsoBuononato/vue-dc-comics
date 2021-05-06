@@ -8,8 +8,13 @@
       <!-- HEADER RIGHT LOGO -->
       <div class="right">
         <ul class="list-item">
-          <li v-for="(link, index) in links" :key="index" @click="ciao()">
-            <a href="#">{{ link.nav }}</a>
+          <li v-for="(link, index) in links.nav" :key="index">
+            <a
+              href="#"
+              @click="addClass(index)"
+              :class="{ active: links.active == false }"
+              >{{ link }}</a
+            >
           </li>
         </ul>
       </div>
@@ -35,13 +40,18 @@ export default {
           "NEWS",
           "SHOP",
         ],
-        color: "black",
+        active: false,
       },
     };
   },
   methods: {
-    ciao() {
-      console.log(this.links.nav[1]);
+    addClass(index) {
+      if (this.links.active == false) {
+        this.links.active = true;
+        console.log(this.links.nav[index]);
+      } else {
+        this.links.active = false;
+      }
     },
   },
 };
@@ -85,9 +95,10 @@ header .container {
 .list-item a {
   color: #000;
 }
-
-.active {
-  color: #0d76e0;
-  border-color: #0d76e0;
+a.no-active {
+  color: orange;
+}
+a.active {
+  color: blueviolet;
 }
 </style>
