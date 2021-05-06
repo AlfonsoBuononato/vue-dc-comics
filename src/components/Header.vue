@@ -1,85 +1,93 @@
 <template>
-    <header>
-        <div class="container">
-            <!-- HEADER LEFT LOGO -->
-            <div class="left">
-                <img src="../assets/dc-logo.png" alt="">
-            </div>
-            <!-- HEADER RIGHT LOGO -->
-            <div class="right">
-                <ul class="list-item">
-                    <li v-for="(link, index) in links" 
-                        :key="index" @click="ciao()">
-                        <a href="#">{{link.nav}}</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </header>
+  <header>
+    <div class="container">
+      <!-- HEADER LEFT LOGO -->
+      <div class="left">
+        <img src="../assets/dc-logo.png" alt="" />
+      </div>
+      <!-- HEADER RIGHT LOGO -->
+      <div class="right">
+        <ul class="list-item">
+          <li v-for="(link, index) in links" :key="index" @click="ciao()">
+            <a href="#">{{ link.nav }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
 </template>
 
 <script>
 export default {
-    name: "Header",
-    data(){
-        return{
-            links:{
-                nav:["CHARACTERS", "COMICS", "MOVIES", "TV", "GAMES", "COLLECTIBLES", "VIDEOS", "FANS", "NEWS", "SHOP"], 
-                color: "black",
-            }
-        }
+  name: "Header",
+  data() {
+    return {
+      links: {
+        nav: [
+          "CHARACTERS",
+          "COMICS",
+          "MOVIES",
+          "TV",
+          "GAMES",
+          "COLLECTIBLES",
+          "VIDEOS",
+          "FANS",
+          "NEWS",
+          "SHOP",
+        ],
+        color: "black",
+      },
+    };
+  },
+  methods: {
+    ciao() {
+      console.log(this.links.nav[1]);
     },
-    methods:{
-        ciao(){
-            console.log(this.links.nav[1]);
-        }
-    }
-}
+  },
+};
 </script>
 
 <style scoped>
+header .container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+/* HEADER LEFT */
+.left {
+  width: 50%;
+  padding: 10px 20px;
+}
 
-    header .container{
-        display: flex;
-        align-items: center;
-        max-width: 1200px;
-        margin: auto;
-    }
-    /* HEADER LEFT */
-    .left{
-        width: 50%;
-        padding: 10px 20px;
-    }
+.left img {
+  width: 80px;
+}
 
-    .left img{
-        width: 80px;
-    }
+/* HEADER RIGHT */
 
-    /* HEADER RIGHT */
+.right {
+  width: 50%;
+}
 
-    .right{
-        width: 50%;
-    }
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  width: 450px;
+  max-width: 100%;
+}
 
-    .list-item{
-        display: flex;
-        justify-content: space-between;
-        width: 450px;
-        max-width: 100%;
-    }
+.list-item li {
+  font-size: 10px;
+  display: flex;
+}
 
-    .list-item li{
-        font-size: 10px;
-        display: flex;
-    }
+.list-item a {
+  color: #000;
+}
 
-    .list-item a{
-        color: #000;
-    }
-
-    .active{
-        color: #0d76e0;
-        border-color: #0d76e0;
-    }
-
+.active {
+  color: #0d76e0;
+  border-color: #0d76e0;
+}
 </style>
