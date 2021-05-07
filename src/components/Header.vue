@@ -12,8 +12,8 @@
             <a
               href="#"
               @click="addClass(index)"
-              :class="{ active: links.active == true }"
-              >{{ link }}</a
+              :class="{ active: link.active == true }"
+              >{{ link.nome }}</a
             >
           </li>
         </ul>
@@ -29,28 +29,56 @@ export default {
     return {
       links: {
         nav: [
-          "CHARACTERS",
-          "COMICS",
-          "MOVIES",
-          "TV",
-          "GAMES",
-          "COLLECTIBLES",
-          "VIDEOS",
-          "FANS",
-          "NEWS",
-          "SHOP",
+          {
+            nome: "CHARACTERS",
+            active: true,
+          },
+          {
+            nome: "COMICS",
+            active: false,
+          },
+          {
+            nome: "MOVIES",
+            active: false,
+          },
+          {
+            nome: "TV",
+            active: false,
+          },
+          {
+            nome: "GAMES",
+            active: false,
+          },
+          {
+            nome: "VIDEOS",
+            active: false,
+          },
+          {
+            nome: "FANS",
+            active: false,
+          },
+          {
+            nome: "NEWS",
+            active: false,
+          },
+          {
+            nome: "SHOP",
+            active: false,
+          },
+          {
+            nome: "MOVIES",
+            active: false,
+          },
         ],
-        active: false,
       },
     };
   },
   methods: {
     addClass(index) {
-      if (this.links.active == false) {
-        this.links.active = true;
-        console.log(this.links.nav[index]);
+      if (this.links.nav[index].active == true) {
+        this.links.nav[index].active = false;
       } else {
-        this.links.active = false;
+        this.links.nav[index].active = true;
       }
     },
   },
