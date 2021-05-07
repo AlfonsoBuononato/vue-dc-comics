@@ -12,7 +12,7 @@
             <a
               href="#"
               @click="addClass(index)"
-              :class="{ active: links.active == false }"
+              :class="{ active: links.active == true }"
               >{{ link }}</a
             >
           </li>
